@@ -1,6 +1,8 @@
 # Deep Research (Tavily)
 
-Research skill for **[Kai 9000](https://kai9000.com)** — the open-source AI assistant. Multi-step deep research via [Tavily](https://tavily.com). Performs structured investigation — recon → deep-dive → synthesis — and writes a cited `.md` report.
+Research skill for **[Kai 9000](https://kai9000.com)** — the open-source AI assistant.
+
+> ⚠️ **Android-only.** Uses Kai's Linux Sandbox (`/root/deep_research/`). For desktop platforms, change the output path in `SKILL.md`. Multi-step deep research via [Tavily](https://tavily.com). Performs structured investigation — recon → deep-dive → synthesis — and writes a cited `.md` report.
 
 ## What it does
 
@@ -44,11 +46,11 @@ Given a research question, the skill:
 ## Recommendations (optional)
 ```
 
-Reports are saved to `/root/deep_research/YYYY-MM-DD HHMM - <slug>.md`.
+Reports are saved to `/root/deep_research/YYYY-MM-DD HHMM - <slug>.md` (Kai Linux Sandbox on Android).
 
 ## Requirements
 
-- **[Kai 9000](https://kai9000.com)** (any platform)
+- **[Kai 9000](https://kai9000.com)** for Android (Linux Sandbox enabled)
 - **Tavily MCP server** connected to Kai, exposing: `tavily_search`, `tavily_extract`, `tavily_crawl`/`tavily_map`, `tavily_research` (optional, for L3/L4)
 - Optional: Context7 MCP server for code/library/API questions
 
