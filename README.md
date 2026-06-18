@@ -1,6 +1,6 @@
 # Deep Research (Tavily)
 
-OpenClaw skill for multi-step deep research via [Tavily](https://tavily.com). Performs structured investigation — recon → deep-dive → synthesis — and writes a cited `.md` report.
+Research skill for **KAI 9000** — an OpenClaw-powered agent. Multi-step deep research via [Tavily](https://tavily.com). Performs structured investigation — recon → deep-dive → synthesis — and writes a cited `.md` report.
 
 ## What it does
 
@@ -52,22 +52,22 @@ Reports are saved to `/root/deep_research/YYYY-MM-DD HHMM - <slug>.md`.
 - **Tavily MCP** tools: `tavily_search`, `tavily_extract`, `tavily_crawl`/`tavily_map`, `tavily_research` (optional, for L3/L4)
 - Optional: Context7 MCP for code/library/API questions
 
-## Installation
+## Installation (for KAI 9000)
 
-Copy `SKILL.md` into your OpenClaw skills directory:
+Clone into KAI 9000's skills directory:
+
+```bash
+git clone https://github.com/lavemagnet/kai_tavily_dr.git \
+  /path/to/kai/skills/deep-research-tavily
+```
+
+Or copy `SKILL.md` directly into any OpenClaw skills folder:
 
 ```bash
 cp SKILL.md ~/.openclaw/workspace/skills/deep-research-tavily/SKILL.md
 ```
 
-Or clone the repo directly into your skills folder:
-
-```bash
-git clone https://github.com/lavemagnet/kai_tavily_dr.git \
-  ~/.openclaw/workspace/skills/deep-research-tavily
-```
-
-Then restart OpenClaw or reload skills.
+Reload skills after installation.
 
 ## Usage
 
