@@ -1,6 +1,6 @@
 # Deep Research (Tavily)
 
-Research skill for **KAI 9000** — an OpenClaw-powered agent. Multi-step deep research via [Tavily](https://tavily.com). Performs structured investigation — recon → deep-dive → synthesis — and writes a cited `.md` report.
+Research skill for **[Kai 9000](https://kai9000.com)** — the open-source AI assistant. Multi-step deep research via [Tavily](https://tavily.com). Performs structured investigation — recon → deep-dive → synthesis — and writes a cited `.md` report.
 
 ## What it does
 
@@ -48,26 +48,19 @@ Reports are saved to `/root/deep_research/YYYY-MM-DD HHMM - <slug>.md`.
 
 ## Requirements
 
-- **OpenClaw** with agent runtime
-- **Tavily MCP** tools: `tavily_search`, `tavily_extract`, `tavily_crawl`/`tavily_map`, `tavily_research` (optional, for L3/L4)
-- Optional: Context7 MCP for code/library/API questions
+- **[Kai 9000](https://kai9000.com)** (any platform)
+- **Tavily MCP server** connected to Kai, exposing: `tavily_search`, `tavily_extract`, `tavily_crawl`/`tavily_map`, `tavily_research` (optional, for L3/L4)
+- Optional: Context7 MCP server for code/library/API questions
 
-## Installation (for KAI 9000)
+## Installation
 
-Clone into KAI 9000's skills directory:
-
-```bash
-git clone https://github.com/lavemagnet/kai_tavily_dr.git \
-  /path/to/kai/skills/deep-research-tavily
-```
-
-Or copy `SKILL.md` directly into any OpenClaw skills folder:
+Add this skill to Kai 9000's skills directory. The exact path depends on your platform; refer to [Kai's skill documentation](https://kai9000.com/docs/).
 
 ```bash
-cp SKILL.md ~/.openclaw/workspace/skills/deep-research-tavily/SKILL.md
+git clone https://github.com/lavemagnet/kai_tavily_dr.git
 ```
 
-Reload skills after installation.
+Then import `SKILL.md` into Kai via Settings → Skills.
 
 ## Usage
 
