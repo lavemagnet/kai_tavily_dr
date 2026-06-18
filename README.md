@@ -56,13 +56,28 @@ Reports are saved to `/root/deep_research/YYYY-MM-DD HHMM - <slug>.md` (Kai Linu
 
 ## Installation
 
-Add this skill to Kai 9000's skills directory. The exact path depends on your platform; refer to [Kai's skill documentation](https://kai9000.com/docs/).
+### 1. Connect the Tavily MCP server
+
+In Kai: **Settings → Tools → MCP Servers → Add MCP Server**.
+
+- **Name:** `tavily`
+- **URL:** `https://mcp.tavily.com/mcp/?tavilyApiKey=<your-tavily-api-key>`
+
+Pass your [Tavily API key](https://app.tavily.com/) **in the URL** as the `tavilyApiKey` query parameter — this is Tavily's primary authentication method for the remote MCP server. **Do not add an `Authorization` header.**
+
+> ⚠️ **Don't use a `Bearer` header.** Although Tavily's docs list it as an alternative, Kai's `Authorization: Bearer <key>` header is not reliably honored by the hosted MCP — the connection silently falls back to an anonymous shared tier with a low monthly cap, and the skill then reports a false *"monthly limit reached"* and degrades to Kai's native `web_search`. Putting the key in the URL avoids this.
+
+After saving, these tools should appear: `tavily_search`, `tavily_extract`, `tavily_crawl`, `tavily_map` (and possibly `tavily_research`). Run a quick test search — it must not fall back to `web_search` or report a limit.
+
+*(Optional)* Add the **Context7** MCP server (one tap from Kai's popular-servers list, no key needed) for code/library/API questions.
+
+### 2. Install the skill
 
 ```bash
 git clone https://github.com/lavemagnet/kai_tavily_dr.git
 ```
 
-Then import `SKILL.md` into Kai via Settings → Skills.
+Then add it in Kai via **Settings → Tools → Skills → Add Skill**, pasting the GitHub reference `lavemagnet/kai_tavily_dr` (or place `SKILL.md` directly into `~/skills/deep-research/` via the sandbox shell). Invoke it in chat with `/deep-research <topic>`.
 
 ## Usage
 
